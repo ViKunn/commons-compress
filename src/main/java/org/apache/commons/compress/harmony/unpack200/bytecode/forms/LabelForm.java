@@ -32,7 +32,7 @@ public class LabelForm extends ByteCodeForm {
     /**
      * Indicates whether this is a widened form.
      */
-    protected boolean widened;
+    protected boolean widenedForm;
 
     /**
      * Constructs a new instance with the specified opcode, name, operandType and rewrite.
@@ -55,7 +55,7 @@ public class LabelForm extends ByteCodeForm {
      */
     public LabelForm(final int opcode, final String name, final int[] rewrite, final boolean widened) {
         this(opcode, name, rewrite);
-        this.widened = widened;
+        this.widenedForm = widened;
     }
 
     /*
@@ -75,7 +75,7 @@ public class LabelForm extends ByteCodeForm {
         // The operand is the difference between the source instruction
         // and the destination instruction.
         byteCode.setOperandSigned2Bytes(targetValue - sourceValue, 0);
-        if (widened) {
+        if (widenedForm) {
             byteCode.setNestedPositions(new int[][] { { 0, 4 } });
         } else {
             byteCode.setNestedPositions(new int[][] { { 0, 2 } });

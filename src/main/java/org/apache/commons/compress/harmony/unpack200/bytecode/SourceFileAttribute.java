@@ -29,7 +29,7 @@ import java.util.Objects;
  */
 public class SourceFileAttribute extends Attribute {
 
-    private static CPUTF8 attributeName;
+    private static CPUTF8 defaultAttributeName;
 
     /**
      * Sets the attribute name.
@@ -37,7 +37,7 @@ public class SourceFileAttribute extends Attribute {
      * @param cpUTF8Value The attribute name.
      */
     public static void setAttributeName(final CPUTF8 cpUTF8Value) {
-        attributeName = cpUTF8Value;
+        defaultAttributeName = cpUTF8Value;
     }
 
     private final CPUTF8 name;
@@ -50,7 +50,7 @@ public class SourceFileAttribute extends Attribute {
      * @param name The source file name.
      */
     public SourceFileAttribute(final CPUTF8 name) {
-        super(attributeName);
+        super(defaultAttributeName);
         this.name = name;
     }
 

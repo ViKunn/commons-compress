@@ -31,7 +31,7 @@ import org.apache.commons.compress.harmony.unpack200.Segment;
  */
 public class CodeAttribute extends BCIRenumberedAttribute {
 
-    private static CPUTF8 attributeName;
+    private static CPUTF8 defaultAttributeName;
 
     /**
      * Sets the attribute name.
@@ -39,7 +39,7 @@ public class CodeAttribute extends BCIRenumberedAttribute {
      * @param attributeName The attribute name.
      */
     public static void setAttributeName(final CPUTF8 attributeName) {
-        CodeAttribute.attributeName = attributeName;
+        CodeAttribute.defaultAttributeName = attributeName;
     }
 
     /**
@@ -90,7 +90,7 @@ public class CodeAttribute extends BCIRenumberedAttribute {
      */
     public CodeAttribute(final int maxStack, final int maxLocals, final byte[] codePacked, final Segment segment, final OperandManager operandManager,
             final List<ExceptionTableEntry> exceptionTable) throws Pack200Exception {
-        super(attributeName);
+        super(defaultAttributeName);
         this.maxLocals = maxLocals;
         this.maxStack = maxStack;
         this.codeLength = 0;

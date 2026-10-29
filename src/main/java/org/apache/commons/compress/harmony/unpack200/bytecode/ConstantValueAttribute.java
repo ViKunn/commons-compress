@@ -29,7 +29,7 @@ import java.util.Objects;
  */
 public class ConstantValueAttribute extends Attribute {
 
-    private static CPUTF8 attributeName;
+    private static CPUTF8 defaultAttributeName;
 
     /**
      * Sets the attribute name.
@@ -37,7 +37,7 @@ public class ConstantValueAttribute extends Attribute {
      * @param cpUTF8Value The attribute name.
      */
     public static void setAttributeName(final CPUTF8 cpUTF8Value) {
-        attributeName = cpUTF8Value;
+        defaultAttributeName = cpUTF8Value;
     }
 
     private int constantIndex;
@@ -50,7 +50,7 @@ public class ConstantValueAttribute extends Attribute {
      * @param entry An entry.
      */
     public ConstantValueAttribute(final ClassFileEntry entry) {
-        super(attributeName);
+        super(defaultAttributeName);
         this.entry = Objects.requireNonNull(entry, "entry");
     }
 
