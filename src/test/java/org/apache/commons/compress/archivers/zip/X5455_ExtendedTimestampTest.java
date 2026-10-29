@@ -385,7 +385,7 @@ class X5455_ExtendedTimestampTest {
         assertFalse(xf.toString().contains(" Modify:"));
         assertFalse(xf.toString().contains(" Access:"));
         assertFalse(xf.toString().contains(" Create:"));
-        Object o = xf.clone();
+        Object o = new X5455_ExtendedTimestamp(xf);
         assertEquals(o.hashCode(), xf.hashCode());
         assertEquals(xf, o);
 
@@ -398,7 +398,7 @@ class X5455_ExtendedTimestampTest {
         assertTrue(xf.toString().contains(" Modify:"));
         assertTrue(xf.toString().contains(" Access:"));
         assertTrue(xf.toString().contains(" Create:"));
-        o = xf.clone();
+        o = new X5455_ExtendedTimestamp(xf);
         assertEquals(o.hashCode(), xf.hashCode());
         assertEquals(xf, o);
     }

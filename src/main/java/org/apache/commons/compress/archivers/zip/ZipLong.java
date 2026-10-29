@@ -164,14 +164,8 @@ public final class ZipLong implements Cloneable, Serializable {
         this.value = value;
     }
 
-    @Override
-    public Object clone() {
-        try {
-            return super.clone();
-        } catch (final CloneNotSupportedException cnfe) {
-            // impossible
-            throw new UnsupportedOperationException(cnfe); // NOSONAR
-        }
+    public ZipLong(final ZipLong other) {
+        this.value = other.value;
     }
 
     /**

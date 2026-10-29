@@ -471,13 +471,26 @@ public class ZipArchiveEntry extends ZipEntry implements ArchiveEntry, EntryStre
      * @throws ZipException on error.
      */
     public ZipArchiveEntry(final ZipArchiveEntry entry) throws ZipException {
-        this((ZipEntry) entry);
+        this(entry.extraFieldFactory, (ZipEntry) entry);
         setInternalAttributes(entry.getInternalAttributes());
         setExternalAttributes(entry.getExternalAttributes());
         setExtraFields(entry.getAllExtraFieldsNoCopy());
         setPlatform(entry.getPlatform());
         final GeneralPurposeBit other = entry.getGeneralPurposeBit();
-        setGeneralPurposeBit(other == null ? null : (GeneralPurposeBit) other.clone());
+        setGeneralPurposeBit(other == null ? null : new GeneralPurposeBit(other));
+        this.versionRequired = entry.versionRequired;
+        this.versionMadeBy = entry.versionMadeBy;
+        this.rawFlag = entry.rawFlag;
+        this.alignment = entry.alignment;
+        this.rawName = entry.rawName;
+        this.nameSource = entry.nameSource;
+        this.commentSource = entry.commentSource;
+        this.localHeaderOffset = entry.localHeaderOffset;
+        this.dataOffset = entry.dataOffset;
+        this.isStreamContiguous = entry.isStreamContiguous;
+        this.diskNumberStart = entry.diskNumberStart;
+        this.lastModifiedDateSet = entry.lastModifiedDateSet;
+        this.time = entry.time;
     }
 
     /**
@@ -563,20 +576,7 @@ public class ZipArchiveEntry extends ZipEntry implements ArchiveEntry, EntryStre
         internalAddExtraField(ntfsTimestamp);
     }
 
-    /**
-     * Overwrite clone.
-     *
-     * @return A cloned copy of this ZipArchiveEntry.
-     */
-    @Override
-    public Object clone() {
-        final ZipArchiveEntry e = (ZipArchiveEntry) super.clone();
-
-        e.setInternalAttributes(getInternalAttributes());
-        e.setExternalAttributes(getExternalAttributes());
-        e.setExtraFields(getAllExtraFieldsNoCopy());
-        return e;
-    }
+    
 
     private ZipExtraField[] copyOf(final ZipExtraField[] src, final int length) {
         return Arrays.copyOf(src, length);

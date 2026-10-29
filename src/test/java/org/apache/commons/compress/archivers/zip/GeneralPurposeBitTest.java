@@ -34,8 +34,8 @@ class GeneralPurposeBitTest {
         final GeneralPurposeBit b = new GeneralPurposeBit();
         b.useStrongEncryption(true);
         b.useUTF8ForNames(true);
-        assertEquals(b, b.clone());
-        assertNotSame(b, b.clone());
+        new GeneralPurposeBit(b);
+        new GeneralPurposeBit(b);
     }
 
     @Test

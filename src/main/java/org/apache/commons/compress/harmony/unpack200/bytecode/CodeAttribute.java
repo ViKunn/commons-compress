@@ -169,7 +169,7 @@ public class CodeAttribute extends BCIRenumberedAttribute {
         // Don't forget to add the ExceptionTable catch_types
         for (final ExceptionTableEntry entry : exceptionTable) {
             final CPClass catchType = entry.getCatchType();
-            // If the catch type is null, this is a finally
+            // If the catch type is null, this is a final
             // block. If it's not null, we need to add the
             // CPClass to the list of nested class file entries.
             if (catchType != null) {

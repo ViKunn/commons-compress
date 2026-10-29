@@ -102,16 +102,13 @@ public class AsiExtraField implements ZipExtraField, UnixStat, Cloneable {
     public AsiExtraField() {
     }
 
-    @Override
-    public Object clone() {
-        try {
-            final AsiExtraField cloned = (AsiExtraField) super.clone();
-            cloned.crc = new CRC32();
-            return cloned;
-        } catch (final CloneNotSupportedException cnfe) {
-            // impossible
-            throw new UnsupportedOperationException(cnfe); // NOSONAR
-        }
+    public AsiExtraField(final AsiExtraField other) {
+        this.mode = other.mode;
+        this.uid = other.uid;
+        this.gid = other.gid;
+        this.link = other.link;
+        this.dirFlag = other.dirFlag;
+        // crc conserva su inicializador: un CRC32 nuevo
     }
 
     /**

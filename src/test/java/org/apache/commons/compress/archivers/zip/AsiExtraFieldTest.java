@@ -40,7 +40,7 @@ class AsiExtraFieldTest implements UnixStat {
         s1.setLinkedFile("foo");
         s1.setMode(0644);
         s1.setDirectory(true);
-        final AsiExtraField s2 = (AsiExtraField) s1.clone();
+        final AsiExtraField s2 = new AsiExtraField(s1);
         assertNotSame(s1, s2);
         assertEquals(s1.getUserId(), s2.getUserId());
         assertEquals(s1.getGroupId(), s2.getGroupId());

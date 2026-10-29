@@ -99,7 +99,7 @@ class X7875_NewUnixTest {
     void testMisc() throws Exception {
         assertNotEquals(xf, new Object());
         assertTrue(xf.toString().startsWith("0x7875 Zip Extra Field"));
-        final Object o = xf.clone();
+        final Object o = new X7875_NewUnix(xf);
         assertEquals(o.hashCode(), xf.hashCode());
         assertEquals(xf, o);
         xf.setUID(12345);

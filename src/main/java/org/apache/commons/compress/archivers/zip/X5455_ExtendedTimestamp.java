@@ -188,9 +188,14 @@ public class X5455_ExtendedTimestamp implements ZipExtraField, Cloneable, Serial
     public X5455_ExtendedTimestamp() {
     }
 
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public X5455_ExtendedTimestamp(final X5455_ExtendedTimestamp other) {
+        this.flags = other.flags;
+        this.bit0_modifyTimePresent = other.bit0_modifyTimePresent;
+        this.bit1_accessTimePresent = other.bit1_accessTimePresent;
+        this.bit2_createTimePresent = other.bit2_createTimePresent;
+        this.modifyTime = other.modifyTime;
+        this.accessTime = other.accessTime;
+        this.createTime = other.createTime;
     }
 
     @Override
