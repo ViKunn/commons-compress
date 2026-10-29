@@ -140,9 +140,10 @@ public class X7875_NewUnix implements ZipExtraField, Cloneable, Serializable {
         reset();
     }
 
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public X7875_NewUnix(final X7875_NewUnix other) {
+        this.version = other.version;
+        this.uid = other.uid;
+        this.gid = other.gid;
     }
 
     @Override

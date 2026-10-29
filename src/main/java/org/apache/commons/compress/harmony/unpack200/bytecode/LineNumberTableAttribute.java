@@ -28,7 +28,7 @@ import java.io.IOException;
  */
 public class LineNumberTableAttribute extends BCIRenumberedAttribute {
 
-    private static CPUTF8 attributeName;
+    private static CPUTF8 defaultAttributeName;
 
     /**
      * Sets the attribute name.
@@ -36,7 +36,7 @@ public class LineNumberTableAttribute extends BCIRenumberedAttribute {
      * @param cpUTF8Value The attribute name.
      */
     public static void setAttributeName(final CPUTF8 cpUTF8Value) {
-        attributeName = cpUTF8Value;
+        defaultAttributeName = cpUTF8Value;
     }
 
     private final int lineNumberTableLength;
@@ -51,7 +51,7 @@ public class LineNumberTableAttribute extends BCIRenumberedAttribute {
      * @param lineNumbers The line numbers.
      */
     public LineNumberTableAttribute(final int lineNumberTableLength, final int[] startPcs, final int[] lineNumbers) {
-        super(attributeName);
+        super(defaultAttributeName);
         this.lineNumberTableLength = lineNumberTableLength;
         this.startPcs = startPcs;
         this.lineNumbers = lineNumbers;

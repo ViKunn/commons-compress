@@ -33,7 +33,7 @@ import org.apache.commons.compress.harmony.pack200.Pack200Exception;
  */
 public class LocalVariableTableAttribute extends BCIRenumberedAttribute {
 
-    private static CPUTF8 attributeName;
+    private static CPUTF8 defaultAttributeName;
 
     /**
      * Sets the attribute name.
@@ -41,7 +41,7 @@ public class LocalVariableTableAttribute extends BCIRenumberedAttribute {
      * @param cpUTF8Value The attribute name.
      */
     public static void setAttributeName(final CPUTF8 cpUTF8Value) {
-        attributeName = cpUTF8Value;
+        defaultAttributeName = cpUTF8Value;
     }
 
     private final int localVariableTableLength;
@@ -67,7 +67,7 @@ public class LocalVariableTableAttribute extends BCIRenumberedAttribute {
      */
     public LocalVariableTableAttribute(final int localVariableTableLength, final int[] startPcs, final int[] lengths, final CPUTF8[] names,
             final CPUTF8[] descriptors, final int[] indexes) {
-        super(attributeName);
+        super(defaultAttributeName);
         this.localVariableTableLength = localVariableTableLength;
         this.startPcs = startPcs;
         this.lengths = lengths;

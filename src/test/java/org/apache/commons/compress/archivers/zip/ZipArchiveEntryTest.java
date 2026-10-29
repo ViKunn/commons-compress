@@ -20,7 +20,7 @@
 package org.apache.commons.compress.archivers.zip;
 
 import static org.apache.commons.compress.AbstractTest.getFile;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -516,8 +516,24 @@ class ZipArchiveEntryTest {
     void testZipArchiveClone() throws Exception {
         try (ZipFile zf = ZipFile.builder().setFile(getFile("COMPRESS-479.zip")).get()) {
             final ZipArchiveEntry ze = zf.getEntry("%U20AC_for_Dollar.txt");
-            final ZipArchiveEntry clonedZe = (ZipArchiveEntry) ze.clone();
-            assertEquals(ze, clonedZe);
+            final ZipArchiveEntry clonedZe = new ZipArchiveEntry(ze);
+            assertNotSame(ze, clonedZe);
+            assertEquals(ze.getName(), clonedZe.getName());
+            assertEquals(ze.getComment(), clonedZe.getComment());
+            assertEquals(ze.getSize(), clonedZe.getSize());
+            assertEquals(ze.getCompressedSize(), clonedZe.getCompressedSize());
+            assertEquals(ze.getCrc(), clonedZe.getCrc());
+            assertEquals(ze.getMethod(), clonedZe.getMethod());
+            assertEquals(ze.getTime(), clonedZe.getTime());
+            assertEquals(ze.getPlatform(), clonedZe.getPlatform());
+            assertEquals(ze.getInternalAttributes(), clonedZe.getInternalAttributes());
+            assertEquals(ze.getExternalAttributes(), clonedZe.getExternalAttributes());
+            assertEquals(ze.getGeneralPurposeBit(), clonedZe.getGeneralPurposeBit());
+            assertEquals(ze.getLocalHeaderOffset(), clonedZe.getLocalHeaderOffset());
+            assertEquals(ze.getDataOffset(), clonedZe.getDataOffset());
+            assertArrayEquals(ze.getRawName(), clonedZe.getRawName());
+            assertArrayEquals(ze.getCentralDirectoryExtra(), clonedZe.getCentralDirectoryExtra());
+            assertArrayEquals(ze.getLocalFileDataExtra(), clonedZe.getLocalFileDataExtra());
         }
     }
 }

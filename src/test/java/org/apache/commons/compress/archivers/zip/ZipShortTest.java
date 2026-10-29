@@ -33,7 +33,7 @@ class ZipShortTest {
     @Test
     void testClone() {
         final ZipShort s1 = new ZipShort(42);
-        final ZipShort s2 = (ZipShort) s1.clone();
+        final ZipShort s2 = new ZipShort(s1);
         assertNotSame(s1, s2);
         assertEquals(s1, s2);
         assertEquals(s1.getValue(), s2.getValue());

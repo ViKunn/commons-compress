@@ -122,15 +122,10 @@ public final class ZipShort implements Cloneable, Serializable {
         this.value = value;
     }
 
-    @Override
-    public Object clone() {
-        try {
-            return super.clone();
-        } catch (final CloneNotSupportedException cnfe) {
-            // impossible
-            throw new UnsupportedOperationException(cnfe); // NOSONAR
-        }
+    public ZipShort(final ZipShort other) {
+        this.value = other.value;
     }
+
 
     /**
      * Override to make two instances with same value equal.

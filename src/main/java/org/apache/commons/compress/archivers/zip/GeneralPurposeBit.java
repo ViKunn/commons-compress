@@ -102,14 +102,13 @@ public final class GeneralPurposeBit implements Cloneable {
     public GeneralPurposeBit() {
     }
 
-    @Override
-    public Object clone() {
-        try {
-            return super.clone();
-        } catch (final CloneNotSupportedException ex) {
-            // impossible
-            throw new UnsupportedOperationException("GeneralPurposeBit is not Cloneable?", ex); // NOSONAR
-        }
+    public GeneralPurposeBit(final GeneralPurposeBit other) {
+        this.languageEncodingFlag = other.languageEncodingFlag;
+        this.dataDescriptorFlag = other.dataDescriptorFlag;
+        this.encryptionFlag = other.encryptionFlag;
+        this.strongEncryptionFlag = other.strongEncryptionFlag;
+        this.slidingDictionarySize = other.slidingDictionarySize;
+        this.numberOfShannonFanoTrees = other.numberOfShannonFanoTrees;
     }
 
     /**

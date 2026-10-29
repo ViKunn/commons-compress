@@ -28,7 +28,7 @@ import java.io.IOException;
  */
 public class EnclosingMethodAttribute extends Attribute {
 
-    private static CPUTF8 attributeName;
+    private static CPUTF8 defaultAttributeName;
 
     /**
      * Sets the attribute name.
@@ -36,7 +36,7 @@ public class EnclosingMethodAttribute extends Attribute {
      * @param cpUTF8Value The attribute name.
      */
     public static void setAttributeName(final CPUTF8 cpUTF8Value) {
-        attributeName = cpUTF8Value;
+        defaultAttributeName = cpUTF8Value;
     }
 
     private int classIndex;
@@ -52,7 +52,7 @@ public class EnclosingMethodAttribute extends Attribute {
      * @param method A constant pool name and type.
      */
     public EnclosingMethodAttribute(final CPClass cpClass, final CPNameAndType method) {
-        super(attributeName);
+        super(defaultAttributeName);
         this.cpClass = cpClass;
         this.method = method;
     }
@@ -70,9 +70,9 @@ public class EnclosingMethodAttribute extends Attribute {
     @Override
     protected ClassFileEntry[] getNestedClassFileEntries() {
         if (method != null) {
-            return new ClassFileEntry[] { attributeName, cpClass, method };
+            return new ClassFileEntry[] { defaultAttributeName, cpClass, method };
         }
-        return new ClassFileEntry[] { attributeName, cpClass };
+        return new ClassFileEntry[] { defaultAttributeName, cpClass };
     }
 
     @Override

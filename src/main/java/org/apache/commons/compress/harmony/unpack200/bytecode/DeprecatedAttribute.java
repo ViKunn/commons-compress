@@ -28,7 +28,7 @@ import java.io.IOException;
  */
 public class DeprecatedAttribute extends Attribute {
 
-    private static CPUTF8 attributeName;
+    private static CPUTF8 defaultAttributeName;
 
     /**
      * Sets the attribute name.
@@ -36,14 +36,14 @@ public class DeprecatedAttribute extends Attribute {
      * @param cpUTF8Value The attribute name.
      */
     public static void setAttributeName(final CPUTF8 cpUTF8Value) {
-        attributeName = cpUTF8Value;
+        defaultAttributeName = cpUTF8Value;
     }
 
     /**
      * Constructs a new instance.
      */
     public DeprecatedAttribute() {
-        super(attributeName);
+        super(defaultAttributeName);
     }
 
     /*

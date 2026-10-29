@@ -300,7 +300,7 @@ public abstract class ZipUtil {
         final UnicodePathExtraField name = nameCandidate instanceof UnicodePathExtraField ? (UnicodePathExtraField) nameCandidate : null;
         final String newName = getUnicodeStringIfOriginalMatches(name, originalNameBytes);
         if (newName != null) {
-            ze.setName(newName);
+            ze.setEntryName(newName);
             ze.setNameSource(ZipArchiveEntry.NameSource.UNICODE_EXTRA_FIELD);
         }
 

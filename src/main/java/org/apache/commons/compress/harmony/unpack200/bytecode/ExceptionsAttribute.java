@@ -29,7 +29,7 @@ import java.util.Arrays;
  */
 public class ExceptionsAttribute extends Attribute {
 
-    private static CPUTF8 attributeName;
+    private static CPUTF8 defaultAttributeName;
 
     private static int hashCode(final Object[] array) {
         final int prime = 31;
@@ -49,7 +49,7 @@ public class ExceptionsAttribute extends Attribute {
      * @param cpUTF8Value The attribute name.
      */
     public static void setAttributeName(final CPUTF8 cpUTF8Value) {
-        attributeName = cpUTF8Value;
+        defaultAttributeName = cpUTF8Value;
     }
 
     private transient int[] exceptionIndexes;
@@ -62,7 +62,7 @@ public class ExceptionsAttribute extends Attribute {
      * @param exceptions The exception classes.
      */
     public ExceptionsAttribute(final CPClass[] exceptions) {
-        super(attributeName);
+        super(defaultAttributeName);
         this.exceptions = exceptions;
     }
 

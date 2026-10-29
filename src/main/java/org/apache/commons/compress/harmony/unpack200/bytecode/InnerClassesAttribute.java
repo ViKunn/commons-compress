@@ -85,7 +85,7 @@ public class InnerClassesAttribute extends Attribute {
 
     }
 
-    private static CPUTF8 attributeName;
+    private static CPUTF8 defaultAttributeName;
 
     /**
      * Sets the attribute name.
@@ -93,7 +93,7 @@ public class InnerClassesAttribute extends Attribute {
      * @param cpUTF8Value The attribute name.
      */
     public static void setAttributeName(final CPUTF8 cpUTF8Value) {
-        attributeName = cpUTF8Value;
+        defaultAttributeName = cpUTF8Value;
     }
 
     private final List<InnerClassesEntry> innerClasses = new ArrayList<>();
@@ -105,7 +105,7 @@ public class InnerClassesAttribute extends Attribute {
      * @param name The attribute name.
      */
     public InnerClassesAttribute(final String name) {
-        super(attributeName);
+        super(defaultAttributeName);
         nestedClassFileEntries.add(getAttributeName());
     }
 
