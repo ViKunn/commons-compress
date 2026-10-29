@@ -220,8 +220,10 @@ public class NewAttribute extends BCIRenumberedAttribute {
                         bcOffset.setActualValue(byteCodeOffsets.get(bcOffset.offset).intValue());
                     }
                 } else if (obj instanceof BCLength) {
-                    // previous must be a BCIndex
                     final BCLength bcLength = (BCLength) obj;
+                    if (!(previous instanceof BCIndex)) {
+                        throw new IllegalStateException("A BCLength must be preceded by a BCIndex");
+                    }
                     final BCIndex prevIndex = (BCIndex) previous;
                     final int index = prevIndex.index + bcLength.length;
                     final int actualLength = byteCodeOffsets.get(index).intValue() - prevIndex.actualValue;
