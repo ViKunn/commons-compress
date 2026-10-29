@@ -352,7 +352,7 @@ public class NewAttributeBands extends BandSet {
                         value = (short) value;
                         break;
                     case 4:
-                        value = value;
+                        // 4-byte values need no narrowing
                         break;
                     default:
                         break;

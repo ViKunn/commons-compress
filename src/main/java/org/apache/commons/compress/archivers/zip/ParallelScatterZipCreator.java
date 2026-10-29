@@ -182,7 +182,7 @@ public class ParallelScatterZipCreator {
         }
         final ZipArchiveEntryRequest zipArchiveEntryRequest = createZipArchiveEntryRequest(zipArchiveEntry, source);
         return () -> {
-            final ScatterZipOutputStream scatterStream = tlScatterStreams.get();
+            final ScatterZipOutputStream scatterStream = currentScatterStream();
             scatterStream.addArchiveEntry(zipArchiveEntryRequest);
             return scatterStream;
         };
@@ -206,7 +206,7 @@ public class ParallelScatterZipCreator {
      */
     public final Callable<ScatterZipOutputStream> createCallable(final ZipArchiveEntryRequestSupplier zipArchiveEntryRequestSupplier) {
         return () -> {
-            final ScatterZipOutputStream scatterStream = tlScatterStreams.get();
+            final ScatterZipOutputStream scatterStream = currentScatterStream();
             scatterStream.addArchiveEntry(zipArchiveEntryRequestSupplier.get());
             return scatterStream;
         };
@@ -218,6 +218,9 @@ public class ParallelScatterZipCreator {
         // lifecycle is bound to the ScatterZipOutputStream returned
         final StreamCompressor sc = StreamCompressor.create(compressionLevel, bs); // NOSONAR
         return new ScatterZipOutputStream(bs, sc);
+    }
+    private ScatterZipOutputStream currentScatterStream() {
+        return tlScatterStreams.get();
     }
 
     /**
@@ -238,7 +241,7 @@ public class ParallelScatterZipCreator {
     public final void submit(final Callable<? extends Object> callable) {
         submitStreamAwareCallable(() -> {
             callable.call();
-            return tlScatterStreams.get();
+            return currentScatterStream();
         });
     }
 
