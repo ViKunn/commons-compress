@@ -139,7 +139,7 @@ public abstract class CompressFilterOutputStream<T extends OutputStream> extends
      * @return The underlying output stream.
      */
     @SuppressWarnings("unchecked")
-    protected T out() {
+    protected T outputStream() {
         return (T) out;
     }
 

@@ -165,3 +165,4 @@ public final class SnappyRoundtripTest extends AbstractTest {
         roundTripTest(path, newParameters(1 << 18, 4, 64, 1 << 16 - 1, 1 << 18 - 1));
     }
 }
+

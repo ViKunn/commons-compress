@@ -25,6 +25,8 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+import org.apache.commons.compress.utils.SecureTempFiles;
+
 /**
  * StreamBridge that caches all data written to the output side in a temporary file.
  *
@@ -35,7 +37,7 @@ final class TempFileCachingStreamBridge extends AbstractStreamBridge {
     private final Path path;
 
     TempFileCachingStreamBridge() throws IOException {
-        this.path = Files.createTempFile("commons-compress", "packtemp");
+        this.path = SecureTempFiles.create(null, "commons-compress", "packtemp");
         this.path.toFile().deleteOnExit();
         this.out = Files.newOutputStream(path);
     }

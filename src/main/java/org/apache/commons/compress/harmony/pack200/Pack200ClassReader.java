@@ -106,3 +106,4 @@ public class Pack200ClassReader extends ClassReader {
     }
 
 }
+

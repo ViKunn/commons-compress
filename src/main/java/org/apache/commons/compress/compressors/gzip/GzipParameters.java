@@ -397,16 +397,6 @@ public class GzipParameters {
         return extraFieldXlen;
     }
 
-    /**
-     * Gets the file name.
-     *
-     * @return The file name.
-     * @deprecated Use {@link #getFileName()}.
-     */
-    @Deprecated
-    public String getFilename() {
-        return fileName;
-    }
 
     /**
      * Gets the file name.
@@ -583,17 +573,6 @@ public class GzipParameters {
         this.extraFieldXlen = extraFieldXlen;
     }
 
-    /**
-     * Sets the name of the compressed file.
-     *
-     * @param fileName The name of the file without the directory path.
-     * @throws CompressorException if the encoded bytes would contain a nul byte '\0' reserved for gzip field termination.
-     * @deprecated Use {@link #setFileName(String)}.
-     */
-    @Deprecated
-    public void setFilename(final String fileName) throws CompressorException {
-        setFileName(fileName);
-    }
 
     /**
      * Sets the name of the compressed file.
@@ -714,3 +693,4 @@ public class GzipParameters {
         return builder.toString();
     }
 }
+

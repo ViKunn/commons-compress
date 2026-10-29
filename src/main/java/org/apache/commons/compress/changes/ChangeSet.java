@@ -153,3 +153,4 @@ public final class ChangeSet<E extends ArchiveEntry> {
         return new LinkedHashSet<>(changes);
     }
 }
+

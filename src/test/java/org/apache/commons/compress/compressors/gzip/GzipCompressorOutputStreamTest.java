@@ -208,17 +208,17 @@ class GzipCompressorOutputStreamTest {
         Files.write(tempSourceFile, bytes);
         final Path targetFile = Files.createTempFile("test", ".gz");
         final GzipParameters parameters = new GzipParameters();
-        parameters.setFilename(sourceFile);
-        assertEquals(parameters.getFilename(), parameters.getFileName());
         parameters.setFileName(sourceFile);
-        assertEquals(parameters.getFilename(), parameters.getFileName());
+        assertEquals(parameters.getFileName(), parameters.getFileName());
+        parameters.setFileName(sourceFile);
+        assertEquals(parameters.getFileName(), parameters.getFileName());
         try (OutputStream fos = Files.newOutputStream(targetFile);
                 GzipCompressorOutputStream gos = new GzipCompressorOutputStream(fos, parameters)) {
             gos.write(tempSourceFile);
         }
         try (GzipCompressorInputStream gis = new GzipCompressorInputStream(Files.newInputStream(targetFile))) {
             assertEquals(expected, gis.getMetaData().getFileName());
-            assertEquals(expected, gis.getMetaData().getFilename());
+            assertEquals(expected, gis.getMetaData().getFileName());
             assertArrayEquals(bytes, IOUtils.toByteArray(gis));
         }
     }
@@ -310,3 +310,4 @@ class GzipCompressorOutputStreamTest {
     }
 
 }
+

@@ -79,3 +79,4 @@ class Compress686Test {
         assertEquals(contents, IOUtils.toString(file.toUri(), StandardCharsets.UTF_8));
     }
 }
+

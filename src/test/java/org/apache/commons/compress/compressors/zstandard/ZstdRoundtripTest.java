@@ -232,3 +232,4 @@ class ZstdRoundtripTest extends AbstractTest {
         roundtrip(os -> new ZstdCompressorOutputStream(new ZstdOutputStream(os)));
     }
 }
+

@@ -488,23 +488,23 @@ The <action> type attribute can be add,update,fix,remove.
     </release> 
     <release version="1.25.0" date="2023-11-12" description="Minor feature and maintenance release.">
       <!-- ADD -->
-      <action type="add" dev="ggregory" due-to="Gary Gregory">Add GzipParameters.getFileName() and deprecate getFilename().</action>
-      <action type="add" dev="ggregory" due-to="Gary Gregory">Add GzipParameters.setFileName(String) and deprecate setFilename(String).</action>
-      <action type="add" dev="ggregory" due-to="Gary Gregory">Add FileNameUtil.getCompressedFileName(String) and deprecate getCompressedFilename(String).</action>
-      <action type="add" dev="ggregory" due-to="Gary Gregory">Add FileNameUtil.getUncompressedFileName(String) and deprecate getUncompressedFilename(String).</action>
-      <action type="add" dev="ggregory" due-to="Gary Gregory">Add FileNameUtil.isCompressedFileName(String) and deprecate isCompressedFilename(String).</action>
-      <action type="add" dev="ggregory" due-to="Gary Gregory">Add BZip2Utils.getCompressedFileName(String) and deprecate getCompressedFilename(String).</action>
-      <action type="add" dev="ggregory" due-to="Gary Gregory">Add BZip2Utils.getUncompressedFileName(String) and deprecate getUncompressedFilename(String).</action>
-      <action type="add" dev="ggregory" due-to="Gary Gregory">Add BZip2Utils.isCompressedFileName(String) and deprecate isCompressedFilename(String).</action>
-      <action type="add" dev="ggregory" due-to="Gary Gregory">Add LZMAUtils.getCompressedFileName(String) and deprecate getCompressedFilename(String).</action>
-      <action type="add" dev="ggregory" due-to="Gary Gregory">Add LZMAUtils.getUncompressedFileName(String) and deprecate getUncompressedFilename(String).</action>
-      <action type="add" dev="ggregory" due-to="Gary Gregory">Add LZMAUtils.isCompressedFileName(String) and deprecate isCompressedFilename(String).</action>
-      <action type="add" dev="ggregory" due-to="Gary Gregory">Add XYUtils.getCompressedFileName(String) and deprecate getCompressedFilename(String).</action>
-      <action type="add" dev="ggregory" due-to="Gary Gregory">Add XYUtils.getUncompressedFileName(String) and deprecate getUncompressedFilename(String).</action>
-      <action type="add" dev="ggregory" due-to="Gary Gregory">Add XYUtils.isCompressedFileName(String) and deprecate isCompressedFilename(String).</action>
-      <action type="add" dev="ggregory" due-to="Gary Gregory">Add GzipUtils.getCompressedFileName(String) and deprecate getCompressedFilename(String).</action>
-      <action type="add" dev="ggregory" due-to="Gary Gregory">Add GzipUtils.getUncompressedFileName(String) and deprecate getUncompressedFilename(String).</action>
-      <action type="add" dev="ggregory" due-to="Gary Gregory">Add GzipUtils.isCompressedFileName(String) and deprecate isCompressedFilename(String).</action>
+      <action type="add" dev="ggregory" due-to="Gary Gregory">Add GzipParameters.getFileName() and deprecate getFileName().</action>
+      <action type="add" dev="ggregory" due-to="Gary Gregory">Add GzipParameters.setFileName(String) and deprecate setFileName(String).</action>
+      <action type="add" dev="ggregory" due-to="Gary Gregory">Add FileNameUtil.getCompressedFileName(String) and deprecate getCompressedFileName(String).</action>
+      <action type="add" dev="ggregory" due-to="Gary Gregory">Add FileNameUtil.getUncompressedFileName(String) and deprecate getUncompressedFileName(String).</action>
+      <action type="add" dev="ggregory" due-to="Gary Gregory">Add FileNameUtil.isCompressedFileName(String) and deprecate isCompressedFileName(String).</action>
+      <action type="add" dev="ggregory" due-to="Gary Gregory">Add BZip2Utils.getCompressedFileName(String) and deprecate getCompressedFileName(String).</action>
+      <action type="add" dev="ggregory" due-to="Gary Gregory">Add BZip2Utils.getUncompressedFileName(String) and deprecate getUncompressedFileName(String).</action>
+      <action type="add" dev="ggregory" due-to="Gary Gregory">Add BZip2Utils.isCompressedFileName(String) and deprecate isCompressedFileName(String).</action>
+      <action type="add" dev="ggregory" due-to="Gary Gregory">Add LZMAUtils.getCompressedFileName(String) and deprecate getCompressedFileName(String).</action>
+      <action type="add" dev="ggregory" due-to="Gary Gregory">Add LZMAUtils.getUncompressedFileName(String) and deprecate getUncompressedFileName(String).</action>
+      <action type="add" dev="ggregory" due-to="Gary Gregory">Add LZMAUtils.isCompressedFileName(String) and deprecate isCompressedFileName(String).</action>
+      <action type="add" dev="ggregory" due-to="Gary Gregory">Add XYUtils.getCompressedFileName(String) and deprecate getCompressedFileName(String).</action>
+      <action type="add" dev="ggregory" due-to="Gary Gregory">Add XYUtils.getUncompressedFileName(String) and deprecate getUncompressedFileName(String).</action>
+      <action type="add" dev="ggregory" due-to="Gary Gregory">Add XYUtils.isCompressedFileName(String) and deprecate isCompressedFileName(String).</action>
+      <action type="add" dev="ggregory" due-to="Gary Gregory">Add GzipUtils.getCompressedFileName(String) and deprecate getCompressedFileName(String).</action>
+      <action type="add" dev="ggregory" due-to="Gary Gregory">Add GzipUtils.getUncompressedFileName(String) and deprecate getUncompressedFileName(String).</action>
+      <action type="add" dev="ggregory" due-to="Gary Gregory">Add GzipUtils.isCompressedFileName(String) and deprecate isCompressedFileName(String).</action>
       <action type="add" dev="ggregory" due-to="Gary Gregory">Add SevenZOutputFile.putArchiveEntry(SevenZArchiveEntry) and deprecate putArchiveEntry(ArchiveEntry).</action>
       <action type="add" dev="ggregory" due-to="Gary Gregory">Add generics to ChangeSet and ChangeSetPerformer.</action>
       <action type="add" dev="ggregory" due-to="Gary Gregory">Add generics to ArchiveStreamProvider and friends.</action>
@@ -2785,3 +2785,4 @@ This also changes the superclass of ZCompressorInputStream.
     </release>
   </body>
 </document>
+

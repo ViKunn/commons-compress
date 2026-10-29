@@ -267,3 +267,4 @@ public class ChangeSetPerformer<I extends ArchiveInputStream<E>, O extends Archi
         return perform(entryIterator, outputStream);
     }
 }
+

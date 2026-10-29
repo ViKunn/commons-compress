@@ -73,3 +73,4 @@ class LhaArchiveEntryTest {
                 + "msdosFileAttributes=null, headerCrc=null]", entry.toString());
     }
 }
+

@@ -58,3 +58,4 @@ class FactoryTest extends AbstractTest {
         roundtripViaFactory(CompressorStreamFactory.getLZ4Framed());
     }
 }
+

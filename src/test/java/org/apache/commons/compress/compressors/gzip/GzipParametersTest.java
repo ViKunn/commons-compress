@@ -94,7 +94,7 @@ class GzipParametersTest {
         gzipParameters.setFileNameCharset(charset);
         assertThrows(CompressorException.class, () -> gzipParameters.setComment(text));
         assertNull(gzipParameters.getComment());
-        assertThrows(CompressorException.class, () -> gzipParameters.setFilename(text));
+        assertThrows(CompressorException.class, () -> gzipParameters.setFileName(text));
         assertNull(gzipParameters.getFileName());
         assertThrows(CompressorException.class, () -> gzipParameters.setFileName(text));
         assertNull(gzipParameters.getFileName());
@@ -118,7 +118,7 @@ class GzipParametersTest {
         gzipParameters.setFileNameCharset(charset);
         gzipParameters.setComment(text);
         assertEquals(text, gzipParameters.getComment());
-        gzipParameters.setFilename(text);
+        gzipParameters.setFileName(text);
         assertEquals(text, gzipParameters.getFileName());
         gzipParameters.setFileName(text);
         assertEquals(text, gzipParameters.getFileName());
@@ -141,3 +141,4 @@ class GzipParametersTest {
         assertEquals(gzipParameters, gzipParameters);
     }
 }
+

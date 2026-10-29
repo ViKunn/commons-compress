@@ -34,7 +34,7 @@ import org.apache.commons.io.RandomAccessFileMode;
 /**
  * Tests COMPRESS-649.
  */
-class CompressionDegradationTest {
+class CompressionDegradationDemo {
 
     private static String compress(final String value) throws IOException {
         try (ByteArrayOutputStream byteStream = new ByteArrayOutputStream(value.length());

@@ -119,3 +119,4 @@ final class Change<E extends ArchiveEntry> {
         return replaceMode;
     }
 }
+

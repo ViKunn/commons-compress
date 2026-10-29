@@ -296,3 +296,4 @@ public class LhaArchiveEntry implements ArchiveEntry {
                 compressionMethod, crcValue, osId, unixPermissionMode, unixUserId, unixGroupId, msdosFileAttributes, headerCrc);
     }
 }
+

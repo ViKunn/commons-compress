@@ -20,13 +20,13 @@
 package org.apache.commons.compress.archivers.zip;
 
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.commons.compress.parallel.FileBasedScatterGatherBackingStore;
 import org.apache.commons.compress.parallel.ScatterGatherBackingStore;
 import org.apache.commons.compress.parallel.ScatterGatherBackingStoreSupplier;
+import org.apache.commons.compress.utils.SecureTempFiles;
 
 /**
  * Implements {@link ScatterGatherBackingStoreSupplier} using a temporary folder.
@@ -63,7 +63,7 @@ public class DefaultBackingStoreSupplier implements ScatterGatherBackingStoreSup
     @Override
     public ScatterGatherBackingStore get() throws IOException {
         final String suffix = "n" + storeNum.incrementAndGet();
-        final Path tempFile = dir == null ? Files.createTempFile(PREFIX, suffix) : Files.createTempFile(dir, PREFIX, suffix);
+        final Path tempFile = SecureTempFiles.create(dir, PREFIX, suffix);
         return new FileBasedScatterGatherBackingStore(tempFile);
     }
 }

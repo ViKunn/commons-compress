@@ -757,3 +757,4 @@ public class LhaArchiveInputStream extends ArchiveInputStream<LhaArchiveEntry> {
         return ByteBuffer.allocate(currentHeader.capacity() + len).put(currentHeader.array()).put(remainingData).order(ByteOrder.LITTLE_ENDIAN);
     }
 }
+

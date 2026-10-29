@@ -156,7 +156,7 @@ public class XZCompressorOutputStream extends CompressorOutputStream<XZOutputStr
     @Override
     @SuppressWarnings("resource") // instance variable access
     public void finish() throws IOException {
-        out().finish();
+        outputStream().finish();
     }
 
     @Override

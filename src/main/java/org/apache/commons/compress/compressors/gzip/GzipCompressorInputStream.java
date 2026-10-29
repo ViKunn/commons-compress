@@ -510,3 +510,4 @@ public class GzipCompressorInputStream extends CompressorInputStream implements 
         return size;
     }
 }
+
