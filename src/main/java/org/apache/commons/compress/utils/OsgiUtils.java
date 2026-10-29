@@ -26,6 +26,8 @@ package org.apache.commons.compress.utils;
  */
 public class OsgiUtils {
 
+    private static final String BUNDLE_REFERENCE_CLASS_NAME = "org.osgi.framework.BundleReference";
+
     private static final boolean inOsgiEnvironment;
 
     static {
@@ -36,7 +38,7 @@ public class OsgiUtils {
     private static boolean isBundleReference(final Class<?> clazz) {
         Class<?> c = clazz;
         while (c != null) {
-            if (c.getName().equals("org.osgi.framework.BundleReference")) {
+            if (c.getName().equals(BUNDLE_REFERENCE_CLASS_NAME)) {
                 return true;
             }
             for (final Class<?> ifc : c.getInterfaces()) {
